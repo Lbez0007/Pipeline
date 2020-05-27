@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectedEventFragment">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/selectedEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/selected_event"
+            android:textColor="@color/colorSecondary"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/textCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="100dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Category"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="150dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="No Expiry Date available for Event"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="200dp"
+            android:textSize="20sp"
+            android:text="No Description available for Event"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/textTasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="350dp"
+            android:textSize="20sp"
+            android:text="Tasks Involved"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <ListView
+            android:id="@+id/selectedEventTasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectedEvent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="354dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="470dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

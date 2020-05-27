@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEventFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/constraint"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/insertName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:layout_marginStart="5dp"
+                android:ems="10"
+                android:hint="@string/insert_name"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <EditText
+                android:id="@+id/insertDate"
+                android:layout_width="220dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginStart="5dp"
+                android:ems="10"
+                android:hint="@string/insert_date"
+                android:inputType="date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/insertName"/>
+
+            <EditText
+                android:id="@+id/insertDescription"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginStart="5dp"
+                android:ems="10"
+                android:hint="@string/insert_description"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/insertDate" />
+
+            <Spinner
+                android:id="@+id/insertEventCategory"
+                android:layout_width="220dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="5dp"
+                android:entries="@array/array_events"
+                android:spinnerMode="dropdown"
+                android:text="@string/choose_event"
+                app:layout_anchor="@+id/constraint"
+                app:layout_anchorGravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/insertDescription" />
+
+            <EditText
+                android:id="@+id/insertTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:layout_marginStart="5dp"
+                android:ems="10"
+                android:hint="@string/insert_task"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/insertEventCategory"
+                />
+
+            <Button
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="@color/colorSecondary"
+                android:text="@string/add"
+                android:textColor="@color/colorOnSecondary"
+                app:layout_constraintTop_toTopOf="@id/insertTask"
+                app:layout_constraintStart_toEndOf="@id/insertTask" />
+
+            <ListView
+                android:id="@+id/tasksList"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_below="@id/insertTask"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/insertTask"
+                app:layout_constraintVertical_bias="0.019" />
+
+            <Button
+                android:id="@+id/noButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="71dp"
+                android:layout_marginBottom="50dp"
+                android:backgroundTint="@color/colorSecondary"
+                android:text="@android:string/no"
+                android:textColor="@color/colorOnSecondary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/okButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:layout_marginStart="71dp"
+                android:backgroundTint="@color/colorSecondary"
+                android:text="@android:string/ok"
+                android:textColor="@color/colorOnSecondary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
