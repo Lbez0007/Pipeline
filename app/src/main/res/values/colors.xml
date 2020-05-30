@@ -10,5 +10,6 @@
     <color name="colorSecondaryLight">#ffff96</color>
     <color name="colorSecondaryAlt">#c9ab34</color>
     <color name="colorOnSecondary">#000000</color>
+    <color name="colorOnError">#B00020</color>
 
 </resources>

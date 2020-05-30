@@ -3,6 +3,7 @@ package com.example.pipeline;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -61,6 +62,8 @@ public class ProductivityStatsActivity extends AppCompatActivity {
         //making changes to graph
         pie.data(data);
         pie.palette(colours);
+
+        pie.labels().fontColor("black");
 
         //assigning UI components defined in the layout
         AnyChartView anyChartView = (AnyChartView) findViewById(R.id.any_chart_view);

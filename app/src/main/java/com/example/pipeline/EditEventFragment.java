@@ -3,6 +3,7 @@ package com.example.pipeline;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -23,7 +25,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class EditEventFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemClickListener {
 
@@ -78,6 +83,8 @@ public class EditEventFragment extends Fragment implements View.OnClickListener,
             addTask.setOnClickListener(this);
             taskList.setOnItemClickListener(this);
 
+            //creating calendar instance for date picker
+            final Calendar _Calendar = Calendar.getInstance();
             //General event components assigned from layout
             final EditText titleField = (EditText) view.findViewById(R.id.insertName);
             final EditText descriptionField = (EditText) view.findViewById(R.id.insertDescription);
@@ -91,6 +98,31 @@ public class EditEventFragment extends Fragment implements View.OnClickListener,
             descriptionField.setText(eventModel.getDescription());
             dateField.setText(eventModel.getDate());
 
+            //date picker dialog handler - handles the selection of date from date picker
+            final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+                @Override
+                //method which handles date being chosen and selected
+                public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                      int dayOfMonth) {
+                    _Calendar.set(Calendar.YEAR, year);
+                    _Calendar.set(Calendar.MONTH, monthOfYear);
+                    _Calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                    updateLabel(_Calendar, dateField); //refer to updateLabel method below
+                }
+
+            };
+
+            //event handler when clicking the date field
+            dateField.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //creating a new instance of a date picker dialog, with current day, month and year
+                    new DatePickerDialog(getActivity(), date, _Calendar
+                            .get(Calendar.YEAR), _Calendar.get(Calendar.MONTH),
+                            _Calendar.get(Calendar.DAY_OF_MONTH)).show();
+                }
+            });
 
             String eventText = eventModel.getCategory();
             //checking if Spinner eventField contains the category of the event, and setting the spinner on the position
@@ -183,6 +215,14 @@ public class EditEventFragment extends Fragment implements View.OnClickListener,
                 Toast.makeText(getActivity(), "Task Added", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    //method which updates the text field for the date entry
+    private void updateLabel(Calendar _Calendar, EditText dateField) {
+        String myFormat = "dd/MM/yyyy"; //format we're using for all our dates
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.UK);
+        //setting the text of the date field to the date selected and saved to Calendar instance
+        dateField.setText(sdf.format(_Calendar.getTime()));
     }
 
 

@@ -7,65 +7,70 @@
     tools:context=".SelectedEventFragment">
 
 
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="-4dp"
+        android:layout_marginEnd="0dp">
 
         <TextView
             android:id="@+id/selectedEvent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:text="@string/selected_event"
             android:textColor="@color/colorSecondary"
-            android:textStyle="bold"
             android:textSize="24sp"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="100dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
             android:text="Category"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="150dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
             android:text="No Expiry Date available for Event"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="200dp"
-            android:textSize="20sp"
             android:text="No Description available for Event"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textTasks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="350dp"
-            android:textSize="20sp"
             android:text="Tasks Involved"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ListView
             android:id="@+id/selectedEventTasks"

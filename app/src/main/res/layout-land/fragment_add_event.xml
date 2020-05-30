@@ -38,7 +38,9 @@
                 android:hint="@string/insert_date"
                 android:inputType="date"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/insertName"/>
+                app:layout_constraintTop_toBottomOf="@id/insertName"
+                android:clickable="true"
+                android:focusable="false"/>
 
             <EditText
                 android:id="@+id/insertDescription"
@@ -104,8 +106,8 @@
                 android:id="@+id/noButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="71dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginBottom="36dp"
                 android:backgroundTint="@color/colorSecondary"
                 android:text="@android:string/no"
                 android:textColor="@color/colorOnSecondary"
@@ -116,13 +118,13 @@
                 android:id="@+id/okButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp"
-                android:layout_marginStart="71dp"
+                android:layout_marginStart="460dp"
+                android:layout_marginBottom="36dp"
                 android:backgroundTint="@color/colorSecondary"
                 android:text="@android:string/ok"
                 android:textColor="@color/colorOnSecondary"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

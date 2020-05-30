@@ -95,7 +95,7 @@ public class EventsReaderDbHelper extends SQLiteOpenHelper {
     //Method to get all records in Events table and stores them in a returned ArrayList of type Events
     public ArrayList<Events> listEvents(){
         String sql = "SELECT * FROM " + EventEntry.TABLE_NAME ;
-        //No changes need to be masde to db, thus we use readable database (as per SQLiteDatabase class)
+        //No changes need to be made to db, thus we use readable database (as per SQLiteDatabase class)
         SQLiteDatabase db = this.getReadableDatabase();
 
         ArrayList<Events> listEvents = new ArrayList<>();

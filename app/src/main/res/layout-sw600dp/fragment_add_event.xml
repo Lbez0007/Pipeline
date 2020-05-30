@@ -38,7 +38,9 @@
                 android:hint="@string/insert_date"
                 android:inputType="date"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/insertName"/>
+                app:layout_constraintTop_toBottomOf="@id/insertName"
+                android:clickable="true"
+                android:focusable="false"/>
 
             <EditText
                 android:id="@+id/insertDescription"

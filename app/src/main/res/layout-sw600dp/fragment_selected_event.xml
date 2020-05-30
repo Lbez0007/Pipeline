@@ -69,13 +69,13 @@
 
         <ListView
             android:id="@+id/selectedEventTasks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="575dp"
+            android:layout_height="826dp"
             android:layout_below="@id/selectedEvent"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="354dp"
-            android:layout_marginEnd="-2dp"
-            android:layout_marginBottom="470dp" />
+            android:layout_marginTop="348dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="70dp" />
 
     </RelativeLayout>
 
